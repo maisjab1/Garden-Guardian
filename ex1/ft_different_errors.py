@@ -3,7 +3,8 @@
 def garden_operations() -> None:
     try:
         print("\nTesting ValueError...")
-        int("abc")
+        a, b, c = [1, 2]
+        print(a, b, c)
     except ValueError:
         print("Caught ValueError: invalid literal for int()")
     try:
@@ -24,9 +25,9 @@ def garden_operations() -> None:
         print("Caught KeyError: 'missing_plant'")
     try:
         print("\nTesting multiple errors together...")
-        int("abc")
+        open("missing.txt")
         print(10 / 0)
-    except (ValueError, ZeroDivisionError):
+    except (FileNotFoundError, ZeroDivisionError):
         print("Caught an error, but program continues!")
 
 
